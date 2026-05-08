@@ -13,9 +13,11 @@ func main(){
 	}
 	fmt.Println("file opened", file.Name())
 
-	// read : while err not show up
+	// read : while err not show up, infinite for loop
 	for{
+	// buffer :fresh	
 	data := make ([]byte, 8)
+	// file object stores current position
 	count , err := file.Read(data)
 	if err != nil{
 		break

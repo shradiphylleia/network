@@ -74,3 +74,6 @@ func main(){
 
 // only for 
 // for {} infinte loop
+// file object remembers its position internally file.Read(data) reads from current position, file object maintains current offset open handle and file descriptor, streams are consumed progressively
+// directly not because not always 8, garbage value
+// go is case sensitive
