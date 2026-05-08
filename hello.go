@@ -35,5 +35,14 @@ func main(){
 // type aliases
 
 
+// module is the unit of dependency management and project org similar to package.json , pom.xml(Maven)
+// module: project
+// packgae: directory of go files
+// installing dependencies : go get <> subsequently updates the module file [ go.md , go.sum]
+
+// ! go.sum is depenedency verification file, storing cryptographic checksums of the exact dependency versions of the project
+// hash of needed packages
+// go.sum is not lockfile
+
 
 
