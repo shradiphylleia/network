@@ -1,4 +1,5 @@
-# TCP
+# network
+# tcp
 echo server implemented in go
 
 tcp is a communication protocol allowing two computers to exchange data over a network
