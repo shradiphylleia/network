@@ -10,12 +10,12 @@ Implemented a synchronous TCP echo server using raw sockets and Go's net package
 ### Concepts explored
     TCP sockets
     Host/port binding
-Streams vs messages
-Byte buffers
-Partial reads
-Connection lifecycle
-Stream framing
-CLI configuration using flags
+    Streams vs messages
+    Byte buffers
+    Partial reads
+    Connection lifecycle
+    Stream framing
+    CLI configuration using flags
 
 ### Running the TCP server:
 
@@ -34,10 +34,9 @@ go run . --host=0.0.0.0 --port=8080
 
 
 # HTTP
-
 Currently implementing HTTP/1.1 from scratch to understand:
 
-request parsing
-headers
-connection handling
-protocol design
+    request parsing
+    headers
+    connection handling
+    protocol design
