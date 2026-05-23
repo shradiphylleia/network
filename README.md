@@ -8,8 +8,8 @@ Low-level backend systems exploration in Go focused on understanding networking 
 Implemented a synchronous TCP echo server using raw sockets and Go's net package.
 
 ### Concepts explored
-TCP sockets
-Host/port binding
+    TCP sockets
+    Host/port binding
 Streams vs messages
 Byte buffers
 Partial reads
