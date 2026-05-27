@@ -1,37 +1,52 @@
 package main
 
-import ("fmt" 
-		"os"
- 		"log"
-		"strings")
+import (
+	"fmt"
+	"io"
+	"log"
+	"os"
+	"strings"
+)
 
-func main(){
+func getLinesChannel(f io.ReadCloser) <-chan string {
+	lines := make(chan string)
+	go func() {
+		defer f.Close()
+		defer close(lines)
+		acc := ""
+		for {
+			data := make([]byte, 8)
+			count, err := f.Read(data)
 
-	// open
-	file, err := os.Open("messages.txt")
-	if err != nil {
-	log.Fatal (err)
-	}
-	fmt.Println("file opened", file.Name())
+			if err != nil {
+				break
+			}
 
-	// read : while err not show up, infinite for loop
-	acc := ""
-	for{
-	// buffer :fresh	
-	data := make ([]byte, 8)
-	// file object stores current position
-	count , err := file.Read(data)
-	if err != nil{
-		break
-	}
-	
-	acc = acc +string(data[:count])
-	parts := strings.Split(acc, "\n")
-	
-	if len(parts)>1{
-		fmt.Printf("%s \n", parts[0])
-		acc = parts[len(parts)-1]
-	}
-	}
+			acc += string(data[:count])
+			parts := strings.Split(acc, "\n")
+
+			for i:=0;i<len(parts)-1;i++ {
+				lines <- parts[i]
+			}
+			acc = parts[len(parts)-1]
+		}
+		if acc != "" {
+			lines <- acc
+		}
+	}()
+	return lines
 }
 
+
+func main() {
+	file, err := os.Open("messages.txt")
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println("file opened:", file.Name())
+	lines := getLinesChannel(file)
+	for line := range lines {
+		fmt.Printf("read: %s\n", line)
+	}
+}
