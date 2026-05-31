@@ -40,3 +40,5 @@ Currently implementing HTTP/1.1 from scratch to understand:
     headers
     connection handling
     protocol design
+
+RFC 9110 & RFC 9112
