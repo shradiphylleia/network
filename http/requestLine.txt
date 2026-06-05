@@ -1,0 +1,5 @@
+Listening on port: 42069connection accepted 
+Request line: 
+Method: GET
+Target: /what/goes/around/comes/back/around
+Version: 1.1
