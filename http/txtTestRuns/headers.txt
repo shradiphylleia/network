@@ -4,6 +4,15 @@ Method: GET
 Target: /shraddha-says-hi
 Version: 1.1
 Headers:
+- user-agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.8457
 - host: localhost:42069
 - connection: Keep-Alive
+connection accepted 
+Request line: 
+Method: GET
+Target: /shraddha-says-bye
+Version: 1.1
+Headers:
+- connection: Keep-Alive
 - user-agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.8457
+- host: localhost:42069
