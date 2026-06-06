@@ -53,7 +53,6 @@ srv, err := server.Serve(port, func(w *response.Writer, req *request.Request) {
 			<body>
 				<h1>Internal Server Error</h1>
 				<p>shakti &amp; kshama</p>
-				<p>क्यूँकि चीज़ें सताती रहेंगी पर हम चीज़ों को सताते रहेंगे, आगे आते रहेंगे अपनी खामियों से ख़ुद को बेहतर करते रहेंगे</p>
 			</body>
 			</html>
 `))
@@ -69,11 +68,10 @@ srv, err := server.Serve(port, func(w *response.Writer, req *request.Request) {
 		w.WriteBody([]byte(`
 			<html>
 			<head>
-				<title>Hello</title>
+				<title>[as]</title>
 			</head>
 			<body>
 				<h1>Seedhe maut</h1>
-				<p>जो सीखता है हार से, वो हारा नहीं जलता है आप से, वो तारा नहीं</p>
 			</body>
 			</html>
 `))

@@ -64,7 +64,12 @@ func (s *Server) handle(conn net.Conn) {
 	}
 
 	resp.Headers["content-length"]=strconv.Itoa(resp.Body.Len())
-	fmt.Fprintf(conn,"HTTP/1.1 %d\r\n",resp.StatusCode,)
+	fmt.Fprintf(
+	conn,
+	"HTTP/1.1 %d %s\r\n",
+	resp.StatusCode,
+	response.ReasonPhrase(resp.StatusCode),
+)
 
 	for key, value := range resp.Headers {
 		fmt.Fprintf(conn, "%s: %s\r\n", key, value)

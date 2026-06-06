@@ -118,3 +118,19 @@ func (w *Writer) WriteBody(p []byte) (int, error) {
 	}
 	return w.Body.Write(p)
 }
+
+func ReasonPhrase(statusCode StatusCode) string {
+	switch statusCode {
+	case StatusOK:
+		return "OK"
+
+	case StatusBadRequest:
+		return "Bad Request"
+
+	case StatusInternalServerError:
+		return "Internal Server Error"
+
+	default:
+		return "Unknown"
+	}
+}
