@@ -41,7 +41,7 @@ Currently implementing HTTP/1.1 from scratch to understand:
     connection handling
     protocol design
 
-Check it out on your system:
+### Check it out on your system:
 
 ``` bash
 go run ./cmd/httpserver
@@ -56,7 +56,7 @@ curl -i http://localhost:42069/buredin
 
 Detailed read:
 
-# HTTP From First Principles: RFC 9110 & RFC 9112
+## HTTP From First Principles: RFC 9110 & RFC 9112
 A ground-up implementation of HTTP/1.1 in Go built directly on top of raw TCP sockets.
 
 ## Architecture
