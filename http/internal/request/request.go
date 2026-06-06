@@ -45,17 +45,17 @@ type RequestLine struct {
 // }
 
 func RequestFromReader(reader io.Reader) (*Request, error) {
-	req := &Request{
+	req:=&Request{
 		state:  requestStateInitialized,
 		Headers: headers.NewHeaders(),
 	}
 	buf := make([]byte, 1024)
 	for {
-		n, err :=reader.Read(buf)
-		if err !=nil {
+		n, err:=reader.Read(buf)
+		if err!=nil {
 			return nil, err
 		}
-		remaining := buf[:n]
+		remaining:=buf[:n]
 		for len(remaining) >0 {
 			consumed, err :=req.parse(remaining)
 			if err != nil {
@@ -65,8 +65,7 @@ func RequestFromReader(reader io.Reader) (*Request, error) {
 				break
 			}
 			remaining=remaining[consumed:]
-
-			if req.state== requestStateDone {
+			if req.state==requestStateDone {
 				return req, nil
 			}
 		}
