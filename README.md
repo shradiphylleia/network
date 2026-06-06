@@ -41,6 +41,18 @@ Currently implementing HTTP/1.1 from scratch to understand:
     connection handling
     protocol design
 
+Check it out on your system:
+
+``` bash
+go run ./cmd/httpserver
+```
+
+in cmd prompt check out the three endpoints:
+``` bash
+curl -i http://localhost:42069/
+curl -i http://localhost:42069/kilas
+curl -i http://localhost:42069/buredin
+```
 
 Detailed read:
 
