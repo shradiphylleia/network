@@ -41,6 +41,10 @@ Currently implementing HTTP/1.1 from scratch to understand:
     connection handling
     protocol design
 
+## concept:
+<img width="1139" height="567" alt="image" src="https://github.com/user-attachments/assets/e63eec79-0129-468b-b53f-a6e7e0cc98d3" />
+
+
 ### Check it out on your system:
 
 ``` bash
