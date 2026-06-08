@@ -94,8 +94,6 @@ HTTP Response Serialization
 TCP Connection
 ```
 
----
-
 # Transport Layer Foundations
 
 Before implementing HTTP, the project explored raw TCP and UDP communication.
@@ -119,7 +117,7 @@ The server reconstructs logical messages using:
 * goroutines
 * channels
 
----
+ 
 
 ## UDP
 UDP exploration focused on understanding datagram semantics.
