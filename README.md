@@ -1,10 +1,12 @@
 # Network Systems in Go
-
 Low-level backend systems exploration in Go focused on understanding networking and protocol internals from scratch.
+
+## tldr:
+https://github.com/user-attachments/assets/4f33fe3d-4c37-4080-9ab6-5667da526222
+
 
 
 # TCP
-
 Implemented a synchronous TCP echo server using raw sockets and Go's net package.
 
 ### Concepts explored
