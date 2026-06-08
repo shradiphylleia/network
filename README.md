@@ -129,13 +129,13 @@ Unlike TCP:
 
 Operational testing demonstrated how packets are silently discarded when no listener is available, reinforcing the distinction between stream-oriented and datagram-oriented protocols.
 
----
+ 
 
 # HTTP Request Parsing
 HTTP is implemented as a streaming parser rather than a one-shot parser.
 The parser accepts arbitrary chunks of bytes and maintains state across reads.
 This mirrors how production protocol parsers operate.
----
+ 
 
 ## State Machine
 Request parsing is modeled as a finite-state machine.
@@ -156,7 +156,7 @@ Done
 ```
 Each state consumes only the bytes relevant to that stage.
 This allows parsing to continue correctly even when requests arrive fragmented across multiple TCP reads.
----
+ 
 
 ## Request Line Parsing
 
@@ -179,7 +179,7 @@ Validation includes:
 * HTTP version validation
 * request line structure validation
 * malformed request detection
----
+ 
 
 ## Header Parsing
 Headers are parsed incrementally, one header at a time.
@@ -225,7 +225,7 @@ Stored as:
 ```http
 set-person: lane, tj, prime
 ```
----
+ 
 
 ## Request Body Parsing
 Request bodies are framed using:
@@ -238,7 +238,7 @@ The parser:
 * detects oversized payloads
 * transitions to completion only after the full body has been received
 This introduces explicit message framing at the application layer.
----
+ 
 
 # Fragmentation Testing
 One common mistake when implementing protocol parsers is assuming an entire request arrives in a single read.
@@ -256,7 +256,7 @@ which intentionally fragments requests into arbitrary chunk sizes:
 ...
 ```
 This validates parser behavior under realistic TCP fragmentation scenarios.
----
+ 
 # Response Generation
 HTTP responses are serialized manually.
 ## Status Line
@@ -266,7 +266,7 @@ HTTP/1.1 200 OK
 HTTP/1.1 400 Bad Request
 HTTP/1.1 500 Internal Server Error
 ```
----
+ 
 
 ## Headers
 Default response headers include:
@@ -277,7 +277,7 @@ Connection
 Content-Type
 ```
 Headers are generated and serialized without framework support.
----
+ 
 
 ## Response Writer
 A custom response abstraction was implemented.
@@ -296,7 +296,7 @@ Conceptually similar to:
 http.ResponseWriter
 ```
 from Go's standard library.
----
+ 
 
 # Concurrent Server Runtime
 The server implementation includes:
@@ -319,7 +319,7 @@ Server lifecycle is managed using:
 atomic.Bool
 ```
 allowing shutdown without spurious listener errors.
----
+ 
 
 # tldr:
 * Stream processing over TCP
